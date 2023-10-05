@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# This script sets up a new webserver
+
 sudo apt-get update
 sudo apt-get -y install nginx
 sudo mkdir /data/
