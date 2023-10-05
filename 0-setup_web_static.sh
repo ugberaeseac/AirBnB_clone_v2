@@ -15,7 +15,7 @@
 sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get -y install nginx
-sudo mkdir -p /data/web/static/shared/
+sudo mkdir -p /data/web_static/shared/
 sudo mkdir -p /data/web_static/releases/test/
 
 echo "# x03. AirBnB clone - Deploy static" | sudo tee /data/web_static/releases/test/index.html
