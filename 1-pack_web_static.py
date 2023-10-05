@@ -4,7 +4,7 @@ This module is a fabfile for downloading a tgz from a webserver
 '''
 
 from datetime import datetime
-from fabric.api import run
+from fabric.api import local, lcd
 
 
 def do_pack():
@@ -13,20 +13,21 @@ def do_pack():
     '''
 
     # create a folder called versions
-    run('mkdir versions')
+    local('mkdir versions')
 
     # create the filename to store the generated .tgz file
     archive = 'web_static_' + datetime.now().strftime(
-        "%Y-%m-%d %H:%M:%S") + '.tgz'
+        "%Y%m%d%H%M%S") + '.tgz'
 
     # generate the file
-    cmd = run(f'tar czvf {archive} web_static')
+    cmd = local(f'tar czvf {archive} web_static')
 
     # return the file path if command succeeded
     if cmd.succeeded:
-        with cd("versions"):
-            path = run("pwd")
-            return path + archive
+        with lcd("versions"):
+            path = local("pwd", capture=True)
+            print(path + '/' + archive)
+            return path + '/' + archive
 
     # return none
     else:
