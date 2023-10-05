@@ -18,6 +18,6 @@ echo "AirBnB clone - Deploy static" | sudo tee /data/web_static/releases/test/in
 
 sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 sudo chown -hR ubuntu:ubuntu /data/
-content_1="\\\tlocation /hbnb_static/ {\n\t\t alias /data/web_static/current;\n\t}\n\n"
-sudo sed -i "49i $content_1" /etc/nginx/sites-available/default
+content_1="\\\t\n\tlocation /hbnb_static/ {\n\t\t alias /data/web_static/current;\n\t}\n\n"
+sudo sed -i "47i $content_1" /etc/nginx/sites-available/default
 sudo service nginx start
