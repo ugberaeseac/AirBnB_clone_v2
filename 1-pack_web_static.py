@@ -26,7 +26,6 @@ def do_pack():
     if cmd.succeeded:
         with lcd("versions"):
             path = local("pwd", capture=True)
-            print(path + '/' + archive)
             return path + '/' + archive
 
     # return none
