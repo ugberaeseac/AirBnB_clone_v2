@@ -14,9 +14,10 @@ def do_deploy(archive_path):
     """
     deploy archive to web server
     """
-    
+
     if not os.path.exists(archive_path):
         return False
+
     try:
         fileName = archive_path.split("/")[-1]
         noExtension = fileName.split(".")[0]
