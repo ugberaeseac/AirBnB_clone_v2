@@ -27,11 +27,10 @@ def do_pack():
     else:
         return None
 
-"""
-def do_deploy(archive_path):
-    '''
+
+""" def do_deploy(archive_path):
+
     deploy archive to web server
-    '''
 
     if not os.path.exists(archive_path):
         return False
@@ -51,13 +50,14 @@ def do_deploy(archive_path):
         print("New version deployed!")
         return True
     except Exception:
-        return False
-"""
+        return False"""
+
 
 def do_deploy(archive_path):
     """
     Deploy archive to web servers
     """
+
     if os.path.isfile(archive_path) is False:
         return False
     try:
@@ -74,5 +74,5 @@ def do_deploy(archive_path):
         run("rm -rf {}".format(symlink))
         run("ln -s {} {}".format(path_no_ext, symlink))
         return True
-    except:
+    except Exception:
         return False

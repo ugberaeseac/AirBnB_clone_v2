@@ -60,11 +60,10 @@ def deploy():
     creates and distributes archive
     to web servers
     """
-    
+
     path = do_pack()
     if path is None:
         return False
 
     result = do_deploy(path)
     return result
-
