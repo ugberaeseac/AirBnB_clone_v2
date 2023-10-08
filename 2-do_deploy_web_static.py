@@ -44,9 +44,9 @@ def do_deploy(archive_path):
         run("mkdir -p {}".format(filePath))
         run("tar -xzf /tmp/{} -C {}".format(fileName, filePath))
         run("rm /tmp/{}".format(fileName))
-        run("rm -rf {}".format(symLink))
         run("mv {}web_static/* {}".format(filePath, filePath))
         run("rm -rf {}web_static".format(filePath))
+        run("rm -rf /data/web_static/current")
         run("ln -s {} /data/web_static/current".format(filePath))
         print("New version deployed!")
         return True
