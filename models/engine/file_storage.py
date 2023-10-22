@@ -20,7 +20,7 @@ class FileStorage:
         myDict = {}
         if (cls is None):
             return FileStorage.__objects
-        
+
         else:
             for key, value in FileStorage.__objects.items():
                 argClass = str(cls).split(".")[2]
@@ -73,7 +73,6 @@ class FileStorage:
             self.save()
         else:
             pass
-
 
     def close(self):
         """

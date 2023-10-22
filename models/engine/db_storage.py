@@ -54,7 +54,8 @@ class DBStorage:
                     queryData = self.__session.query(value).all()
                     if (queryData):
                         for data in queryData:
-                            key = "{}.{}".format(data.__class__.__name__, data.id)
+                            key = "{}.{}".format(data.__class__.__name__,
+                                                 data.id)
                             myDict[key] = data
             return myDict
 
